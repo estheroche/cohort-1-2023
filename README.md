@@ -6,11 +6,13 @@ This repository contains a collection of Solidity examples that students can use
 
 This repository contains the following Solidity examples:
 
-- [Structs.sol](./001_Structs.sol) - A simple smart contract about structs
+- [Events.sol](./001_Events.sol) - A simple smart contract demonstrating how events work
 
-- [Errors.sol](./001_Errors.sol) - A simple smart contract about how to call errors in solidity
+- [Inheritance.sol](./002_Inheritance.sol) - A simple smart contract that shows how inheritance works in contract
 
-- [Strings.sol](./001_Strings.sol) - A simple smart contract about how to compare strings in solidity
+- [ErrorLibrary.sol](./003_ErrorLibrary.sol) - A simple library that is used to check errors.
 
-- [Modifiers.sol](./001_Modifiers.sol) - A simple smart contract about Modifiers in solidity
+- [UsingLibrary.sol](./004_UsingLibrary.sol) - A simple smart contract that imports a library
+  
+- [EncodeDecode.sol](./005_EncodeDecode.sol) - A simple smart contract showing how to encode and decode in solidity
   
