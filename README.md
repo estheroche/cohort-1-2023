@@ -6,11 +6,10 @@ This repository contains a collection of Solidity examples that students can use
 
 This repository contains the following Solidity examples:
 
-- [Structs.sol](./001_Structs.sol) - A simple smart contract about structs
+- [Interfaces.sol](./001_Interfaces.sol) - A simple smart contract that demonstrates how to use interfaces to interact with other contracts in a decentralized system. 
 
-- [Errors.sol](./001_Errors.sol) - A simple smart contract about how to call errors in solidity
+- [ContractCalling.sol](./002_ContractCalling.sol) - A simple smart  contract that imports and calls functions from the IdGenerator contract
 
-- [Strings.sol](./001_Strings.sol) - A simple smart contract about how to compare strings in solidity
+- [ContractCreator.sol](./003_ContractCreator.sol) -The code contains two Solidity contracts, "Student" and "Registration", that allow the registration of students and create a contract for them and retrieval of their details using a Student contract array.
 
-- [Modifiers.sol](./001_Modifiers.sol) - A simple smart contract about Modifiers in solidity
   
