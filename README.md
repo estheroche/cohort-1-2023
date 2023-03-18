@@ -6,10 +6,7 @@ This repository contains a collection of Solidity examples that students can use
 
 This repository contains the following Solidity examples:
 
-- [Interfaces.sol](./001_Interfaces.sol) - A simple smart contract that demonstrates how to use interfaces to interact with other contracts in a decentralized system. 
+- [IsaacToken](./001_IsaacToken.sol) - The code is a Solidity smart contract implementation of a simple token standard with the functionality of transfer, transferFrom, approve, allowance, and burn, as well as the ability to mint new tokens.
+- Check it out [here](https://mumbai.polygonscan.com/address/0x6fCB096F95e047CD62e4835C69472e2df88512C7)
 
-- [ContractCalling.sol](./002_ContractCalling.sol) - A simple smart  contract that imports and calls functions from the IdGenerator contract
-
-- [ContractCreator.sol](./003_ContractCreator.sol) -The code contains two Solidity contracts, "Student" and "Registration", that allow the registration of students and create a contract for them and retrieval of their details using a Student contract array.
-
-  
+- [OtToken.sol](./002_OtToken.sol) - The code defines a Solidity smart contract called "OtToken" that inherits from the OpenZeppelin ERC20 contract and adds a constructor to set the initial token supply
