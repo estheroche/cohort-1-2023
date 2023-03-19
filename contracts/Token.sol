@@ -4,17 +4,17 @@
 // It will be used by the Solidity compiler to validate its version.
 pragma solidity ^0.8.9;
 
+// 0x0000000000000000000000000000000000000000
 
 // This is the main building block for smart contracts.
 contract Token {
     // Some string type variables to identify the token.
     string public name = "My Hardhat Token";
     string public symbol = "MHT";
-
     // The fixed amount of tokens, stored in an unsigned integer type variable.
     uint256 public totalSupply = 1000000;
 
-    // An address type  is used to store ethereum accounts.
+    // An address type variable is used to store ethereum accounts.
     address public owner;
 
     // A mapping is a key/value map. Here we store each account's balance.
@@ -45,10 +45,13 @@ contract Token {
         // If `require`'s first argument evaluates to `false` then the
         // transaction will revert.
         require(balances[msg.sender] >= amount, "Not enough tokens");
+        require(to != address(0), "Cannot send to invalid address");
 
         // Transfer the amount.
-        balances[msg.sender] -= amount;
-        balances[to] += amount;
+        // balances[msg.sender] -= amount;
+        balances[msg.sender] = balances[msg.sender] - amount;
+        // balances[to] += amount;
+        balances[to] = balances[to] + amount;
 
         // Notify off-chain applications of the transfer.
         emit Transfer(msg.sender, to, amount);
