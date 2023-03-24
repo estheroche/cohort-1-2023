@@ -34,5 +34,7 @@ npx hardhat run scripts/deploy.js --network mumbai
 
 ```
 
+> **Note** Please ensure to create a `.env` file in your project directory and add your secret keys before running the deployment command. Check out the `.env-sample` file to see how to structure your `.env` file.
+
 
 To learn more about Hardhat, check out the [Hardhat documentation](https://hardhat.org/hardhat-runner/docs/getting-started)
