@@ -23,7 +23,7 @@ npm install
 
 - Compile the contracts using the command
 ````bash
-npx harhdat compile
+npx hardhat compile
 ````
 
 - To deploy, run the command:
