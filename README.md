@@ -1,3 +1,5 @@
+**[Check [`nft-dapp-2` branch](https://github.com/BlockheaderWeb3-Community/cohort-1-2023/tree/nft-dapp-2) for the complete code]**
+
 # NFT Dapp 1
 
 NFT minter decentralised application
