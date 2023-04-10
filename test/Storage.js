@@ -7,34 +7,44 @@ const { expect } = require("chai");
 
 describe("Storage Test Suite", async () => {
     const { parseEther, formatEther } = await ethers.utils;
+
     let owner, addr1, addr2, storageContract
+
     beforeEach(async () => {
         [owner, addr1, addr2] = await ethers.getSigners();
         const StorageContract = await ethers.getContractFactory("Storage")
         storageContract = await StorageContract.deploy(owner.address)
-        console.log("storage contract address__", storageContract.address)
+        console.log("storage contract address", storageContract.address)
     })
 
     describe("Deployment", async () => {
         it("should set the right owner", async function () {
-            console.log("owner ___", owner.address)
+            console.log("owner _", owner.address)
             expect(await storageContract.owner()).to.equal(owner.address);
             expect(await storageContract.owner()).to.not.equal(addr1.address)
             expect(await storageContract.owner()).to.not.equal(addr2.address)
         });
+
+        it("should set only owner to change number", async function () {
+            // const value1 = await parseEther("100")
+            const value1 = 100
+            // const changeNumberTxn = await storageContract.changeNumber(value1)
+            await storageContract.connect(owner).changeNumber(value1)
+            // await changeNumberTxn.wait()
+            const number = await storageContract.number()
+            // console.log("stored number__", formatEther(value1))
+            expect(number).to.eq(value1)
+            expect(number).to.not.eq(0);
+
+        });
+
+        it("Should revert if changeNumber is called ny another address other than owner", async () => {
+          await expect(storageContract.connect(addr1).changeNumber(23)).to.be.revertedWith("Only the contract owner can change the number")
+        })
     })
 
-    describe("Transactions", async () => {
-        it("should change number", async function () {
-            const num1 = 100
-            const num2 = 150
-            await storageContract.changeNumber(num1)
 
-            const number = await storageContract.number()
-            expect(number).to.eq(num1)
-            expect(number).to.not.eq(0)
-            expect(number).to.not.eq(5)
-            expect(number).to.not.eq(num2)
+});
 
             await new Promise(resolve => {
                 setTimeout(resolve, 2000); // 2s delay
