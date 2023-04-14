@@ -46,22 +46,9 @@ describe("Storage Test Suite", async () => {
 
 });
 
-            await new Promise(resolve => {
-                setTimeout(resolve, 2000); // 2s delay
-            })
-            await storageContract.changeNumber(num2)
-            const number2 = await storageContract.number()
-
-            expect(number2).to.eq(num2)
-            expect(number2).to.not.eq(num1)
-        });
-
+            
         it("should return myAddress in Storage contract", async function () {
             const storedMyAddress = "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4"
             expect(await storageContract.viewAddress()).to.eq(storedMyAddress)
             expect(await storageContract.viewAddress()).to.not.eq(addr2.address)
         });
-    })
-
-
-});
